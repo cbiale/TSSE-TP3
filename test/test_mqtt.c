@@ -128,15 +128,26 @@ void test_mqtt_desuscribir_falla_unsubscribe(void) {
     TEST_ASSERT_EQUAL(1, valor);
 }
 
-// Dummy para simular éxito en agregar_callback en mqtt_suscribir
-int agregar_callback(const char *topico, callback_t callback) {
-    (void)topico;
-    (void)callback;
-    return 0; // Simula éxito
+// Tests de mqtt_desconectar
+
+// Test de desconexión exitosa
+void test_mqtt_desconectar_exito(void) {
+    esp_mqtt_client_init_IgnoreAndReturn((void*)0x1234);
+    esp_mqtt_client_start_IgnoreAndReturn(ESP_OK);
+    esp_mqtt_client_register_event_IgnoreAndReturn(ESP_OK);
+    int resultado = mqtt_conectar("test.org", 1883);
+    TEST_ASSERT_EQUAL(0, resultado);
+
+    esp_mqtt_client_stop_IgnoreAndReturn(ESP_OK);
+    esp_mqtt_client_destroy_IgnoreAndReturn(ESP_OK);
+    int valor = mqtt_desconectar();
+    TEST_ASSERT_EQUAL(0, valor);
 }
 
-// Dummy para simular éxito en quitar_callback en mqtt_desuscribir
-int quitar_callback(const char *topico) {
-    (void)topico;
-    return 0; // Simula éxito
+
+// Test de desconexión sin cliente
+void test_mqtt_desconectar_sin_cliente(void) {
+    int valor = mqtt_desconectar();
+    // Verifica que la desconexión fue exitosa
+    TEST_ASSERT_EQUAL(1, valor);
 }

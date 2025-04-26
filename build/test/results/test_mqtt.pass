@@ -40,12 +40,20 @@
   :line: 119
   :message: ''
   :unity_test_time: 0
+- :test: test_mqtt_desconectar_exito
+  :line: 134
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_desconectar_sin_cliente
+  :line: 149
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 9
-  :passed: 9
+  :total: 11
+  :passed: 11
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002068479999252304
+:time: 0.0014789679989917204

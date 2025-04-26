@@ -217,6 +217,7 @@ int mqtt_desconectar() {
             free(temp->topico);
             free(temp);
         }
+        return 0;
     }
     return 1;
 }

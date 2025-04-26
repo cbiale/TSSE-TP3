@@ -26,6 +26,8 @@ extern void test_mqtt_publicar_exito(void);
 extern void test_mqtt_publicar_falla_publish(void);
 extern void test_mqtt_desuscribir_exito(void);
 extern void test_mqtt_desuscribir_falla_unsubscribe(void);
+extern void test_mqtt_desconectar_exito(void);
+extern void test_mqtt_desconectar_sin_cliente(void);
 
 
 /*=======Mock Management=====*/
@@ -118,6 +120,10 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_mqtt_desuscribir_falla_unsubscribe");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_mqtt_desconectar_exito");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_mqtt_desconectar_sin_cliente");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
@@ -133,6 +139,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   run_test(test_mqtt_publicar_falla_publish, "test_mqtt_publicar_falla_publish", 91);
   run_test(test_mqtt_desuscribir_exito, "test_mqtt_desuscribir_exito", 106);
   run_test(test_mqtt_desuscribir_falla_unsubscribe, "test_mqtt_desuscribir_falla_unsubscribe", 119);
+  run_test(test_mqtt_desconectar_exito, "test_mqtt_desconectar_exito", 134);
+  run_test(test_mqtt_desconectar_sin_cliente, "test_mqtt_desconectar_sin_cliente", 149);
 
   CMock_Guts_MemFreeFinal();
   return UNITY_END();
