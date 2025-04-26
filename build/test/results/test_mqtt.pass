@@ -1,0 +1,51 @@
+---
+:source:
+  :file: test/test_mqtt.c
+  :dirname: test
+  :basename: test_mqtt.c
+:successes:
+- :test: test_mqtt_conectar_exito
+  :line: 18
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_conectar_falla_init
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_conectar_falla_start
+  :line: 38
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_suscribir_exito
+  :line: 50
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_suscribir_falla_subscribe
+  :line: 63
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_publicar_exito
+  :line: 78
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_publicar_falla_publish
+  :line: 91
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_desuscribir_exito
+  :line: 106
+  :message: ''
+  :unity_test_time: 0
+- :test: test_mqtt_desuscribir_falla_unsubscribe
+  :line: 119
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 9
+  :passed: 9
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.002068479999252304

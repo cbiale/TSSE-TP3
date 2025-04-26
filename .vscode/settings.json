@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "queue.h": "c",
+        "queue_wrapper.h": "c",
+        "mock_mqtt_client.h": "c"
+    }
+}
